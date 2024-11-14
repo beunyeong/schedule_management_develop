@@ -26,28 +26,54 @@
 
 ■ 필수 기능 가이드 개발에 필요한 테이블을 생성하는 query를 작성
 <pre><code>	 
-CREATE schedules users (
-id INTEGER(30) NOT NULL,
-password VARCHAR(20) NOT NULL,  
-title VARCHAR(100) NOT NULL, 
-content VARCHAR(100) NOT NULL, 
-createdate DATETIME NOT NULL,
-updateddate DATETIME NOT NULL,
-username VARCHAR(20) NOT NULL
-);    
+# Create user table
+CREATE TABLE user (
+user_id BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '유저 식별자',
+username VARCHAR(255) NOT NULL COMMENT '유저명',
+email VARCHAR(255) NOT NULL UNIQUE COMMENT  '이메일',
+password VARCHAR(255) NOT NULL COMMENT  '비밀번호',
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '등록일',
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '수정일'
+);
+</code></pre>
+
+<pre><code>	 
+# Create schedule table
+CREATE TABLE Schedule (
+schedule_id BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '일정 식별자',
+user_id INT COMMENT '유저 식별자',
+title VARCHAR(255) NOT NULL COMMENT '일정 제목',
+contents LONGTEXT NOT NULL COMMENT '일정 내용',
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '일정 작성일',
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '일정 수정일',
+FOREIGN KEY (user_id) REFERENCES User(user_id)  #user_id는 User 테이블의 user_id를 참조한다.
+);
 </code></pre>
 
 **2) Insert**
 
 ■  일정 생성을 하는 query를 작성
 <pre><code>
-INSERT INTO schedules (
-"title": "LV0 과제 제출",
-"content": "API명세서 작성하여 검사 받기",
-"createdate": "now()",
-"updateddate": "now()"
+# Insert user
+INSERT INTO user (
+"username": "baek",
+"email": "a@naver.com",
+"password": "1234",
+"create_date": TIMESTAMP
 )
 </code></pre>
+
+<pre><code>
+# Insert schedule
+INSERT INTO user (
+"title": 자바공부",
+"content": "1주차 강의 복습",
+"username": "baek",
+"create_date": TIMESTAMP
+)
+</code></pre>
+
+
 
 **3) Select**
 
@@ -72,8 +98,8 @@ WHERE id='1';
 ■  선택한 일정을 수정하는 query를 작성
 <pre><code>
 UPDATE schedules
-SET title='LV0 과제 검토' --> 할일,작성자명만 수정
-WHERE title='LV0 과제 제출';
+SET title='자바 공부'
+WHERE title='자바 강의 수강';
 </code></pre>
 
 **6) Delete**
