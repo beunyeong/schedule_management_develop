@@ -1,4 +1,7 @@
 # schedule_management_develop
+## 개요 작성 필수
+1. 
+
 
 ## 1. API 명세서
 [노션링크] https://www.notion.so/13557d2a94228012b2d5f76d15aaa982
