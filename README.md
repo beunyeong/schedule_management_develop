@@ -1,6 +1,7 @@
 # schedule_management_develop
 
 ## 1. API 명세서
+[노션링크] https://www.notion.so/13557d2a94228012b2d5f76d15aaa982
 * User
 ![image](https://github.com/user-attachments/assets/9bd7083f-009a-45ef-b3b7-efe0baee55df)
 
