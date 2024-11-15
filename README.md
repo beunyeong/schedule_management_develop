@@ -10,7 +10,7 @@
 
 * Schedule
 
-![image](https://github.com/user-attachments/assets/17f6c50e-03b3-4887-a01c-9fef03618417)
+![image](https://github.com/user-attachments/assets/23ce6ee4-03f9-46f4-a1d6-8c26aa4861cf)
 
 
 
