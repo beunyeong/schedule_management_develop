@@ -1,13 +1,13 @@
 # schedule_management_develop
 ## 개요
 1. 일정 관리 APP과 로그인 인증 기능 구현
-2. Spring Boot와 JPA를 활용하여 일정과 유저 관리, 회원가입 및 로그인 기능 제공
+2. Spring Boot와 JPA를 활용하여 일정과 사용자 관리, 회원가입 및 로그인 기능 제공
    
    (1) 일정 Schedule : 생성, 조회, 수정, 삭제 기능 구현
 
    (2) 사용자 User (CRD) : 생성, 조회, 삭제 기능 구현
    
-   (3) 유저와 일정의 연관 관계 설정(ManyToOne)
+   (3) 사용자와 일정의 연관 관계 설정(ManyToOne)
    
    (4) 회원 가입 기능 구현
 
